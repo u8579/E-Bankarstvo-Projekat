@@ -33,10 +33,10 @@ Nakon transakcije se ispisuje stanje na dinarskom računu i korisnik može da po
 ## Menjačnica
 Kada se odabere opcija menjačnica, korisniku se prvo daje izbor valute, gde pritom mora da se unese ime jedne od 5 ponudjenih valuta
 Nakon toga, korisnik bira da li želi da proda ili kupi datu valutu i mora da unese 1 za prodaju ili 2 za kupovinu.
-1. Prodaja
+1. Prodaja - 
    Korisnik unosi iznos izabrane valute koju želi da proda.
    U slučaju da korisnik nema dovoljan iznos izabrane valute, ispisuje se greška, i ako korisnik nema uopšte izabrane valute može da unese 0 da izađe iz prodaje
-2. Kupovina
+2. Kupovina - 
    Korisnik unosi iznos izabrane valute koju želi da kupi.
    U slučaju da korisnik nema dovoljno dinara da kupi izabranu valutu, ispisuje se greška i može da unese 0 ako je dinarski račun prazan da izađe iz kupovine
 Nakon transakcije se ispisuje stanje na deviznom i dinarskom računu i korisnik može da obavi ponovo transakciju u menjacnici
