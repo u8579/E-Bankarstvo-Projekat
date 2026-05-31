@@ -43,8 +43,11 @@ Nakon transakcije se ispisuje stanje na deviznom i dinarskom računu i korisnik 
 
 ## Prenos sredstava
 Korisnik unosi Naziv primaoca, mesto primaoca, broj računa primaoca, šifru plaćanja, iznos, model plaćanja i poziv na broj. 
+
 Moguće šifre plaćanja su 253 i 289. Šifra plaćanja 253 zahteva da model plaćanja bude 97. 
+
 Vrši se provera poziva na broj prema modelu plaćanja gde ako je model plaćanja 97 poziv na broj mora da bude 3 ili više cifara.
+
 Banka uzima proviziju za svaki prenos sredstava. Provizija iznosi 20 dinara, odnosno 0,5% iznosa prenosa u slučaju da je iznos veći od 50.000,00 dinara.
 
 Da bi izašao iz programa, korisnik na glavnom meniju može da izabere opciju 5.
