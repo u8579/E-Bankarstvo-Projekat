@@ -18,6 +18,7 @@ Kada se aplikacija pokrene, korisniku je predstavljen meni sa sledećim opcijama
 
 ## Pregled stanja
 Korisniku se ispisuje stanje na dinarskom i deviznom računu.
+
 Stanje deviznog računa je prikazano po valutama, npr:
 
 0 USD
@@ -27,11 +28,11 @@ Stanje deviznog računa je prikazano po valutama, npr:
 300 CAD
 
 ## Uplata sredstava
-Korisniku se daje mogućnost da uplati određen iznos na dinarski račun
-Nakon transakcije se ispisuje stanje na dinarskom računu i korisnik može da ponovo uplati sredstva na dinarski račun
+Korisniku se daje mogućnost da uplati određen iznos na dinarski račun, nakon transakcije se ispisuje stanje na dinarskom računu i korisnik može da ponovo uplati sredstva na dinarski račun
 
 ## Menjačnica
 Kada se odabere opcija menjačnica, korisniku se prvo daje izbor valute, gde pritom mora da se unese ime jedne od 5 ponudjenih valuta
+
 Nakon toga, korisnik bira da li želi da proda ili kupi datu valutu i mora da unese 1 za prodaju ili 2 za kupovinu.
 1. Prodaja - 
    Korisnik unosi iznos izabrane valute koju želi da proda.
