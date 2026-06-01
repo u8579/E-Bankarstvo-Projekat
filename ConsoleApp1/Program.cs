@@ -159,19 +159,8 @@ namespace E_Bankarstvo
                 Console.Write("Unesite mesto primaoca: ");
                 string mesto = Console.ReadLine();
 
-                int brRacuna;
-                bool validrac;
-                do
-                {
-                    Console.Write("Unesite broj računa primaoca: ");
-                    validrac = int.TryParse(Console.ReadLine(), out brRacuna);
-
-                    if (!validrac)
-                    {
-                        Console.WriteLine("Pogrešan unos! Unesite ponovo.");
-                    }
-
-                } while (!validrac);
+                Console.Write("Unesite broj računa primaoca: ");
+                string brRacuna = Console.ReadLine();
 
                 Console.Write("Unesite šifru plaćanja (253 ili 289): ");
                 int sifra;
