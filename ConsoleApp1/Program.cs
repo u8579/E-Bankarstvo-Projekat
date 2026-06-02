@@ -23,6 +23,10 @@ namespace E_Bankarstvo
                     Console.Write("{0,-3} {1}", "|", "Unesite iznos za uplatu na dinarski račun: ");
                     string iznos = Console.ReadLine();
                     valid = double.TryParse(iznos, out iz);
+                    if (iz < 0)
+                    {
+                        valid = false;
+                    }
 
                     if (!valid)
                     {
@@ -49,7 +53,7 @@ namespace E_Bankarstvo
             {
                 Console.WriteLine();
                 Console.WriteLine("================== MENJACNICA ==================");
-                                                                                      
+
                 string izbor_str;
                 int izbor = -1;
                 Console.Write("{0,-3} {1}", "|", "Unesite željenu valutu (USD, EUR, GBP, CHF, CAD): ");
@@ -97,6 +101,11 @@ namespace E_Bankarstvo
                             Console.WriteLine("{0,-3} {1}", "|", "Nedovoljan iznos na deviznom računu! Unesite ponovo.");
                             validiz = false;
                         }
+                        else if(iznos < 0)
+                        {
+                            Console.WriteLine("{0,-3} {1}", "|", "Unet je negativan iznos! Unesite ponovo.");
+                            validiz = false;
+                        }
                         else
                         {
                             validiz = true;
@@ -123,6 +132,11 @@ namespace E_Bankarstvo
                         else if (din_racun < iznos * kupKurs[izbor])
                         {
                             Console.WriteLine("{0,-3} {1}", "|", "Nedovoljan iznos na dinarskom računu! Unesite ponovo.");
+                            validiz = false;
+                        }
+                        else if (iznos < 0)
+                        {
+                            Console.WriteLine("{0,-3} {1}", "|", "Unet je negativan iznos! Unesite ponovo.");
                             validiz = false;
                         }
                         else
@@ -199,19 +213,35 @@ namespace E_Bankarstvo
                 {
                     provizija = iznos * 0.005;
                 }
-
-                while (din_racun < (iznos + provizija))
+                else if (iznos == 0)
                 {
-                    Console.WriteLine("\nGreška: Nedovoljno sredstava na računu za iznos i proviziju!");
-                    Console.Write("Unesite manji iznos za prenos: ");
+                    provizija = 0;
+                }
+
+                while ((din_racun < (iznos + provizija)) || (iznos < 0))
+                {
+                    Console.WriteLine("\nGreška: Nedovoljno sredstava na računu za iznos i proviziju!/Unet negativan iznos!");
+                    if (din_racun < (iznos + provizija))
+                    {
+                        Console.Write("Unesite manji iznos za prenos: ");
+                    }
+                    else
+                    {
+                        Console.Write("Unesite nenegativan iznos za prenos: ");
+                    }
                     iznos = double.Parse(Console.ReadLine());
                     if (iznos > 50000)
                     {
                         provizija = iznos * 0.005;
                     }
-                    else
+                    else if (iznos < 50000 && iznos > 0)
                     {
                         provizija = 20;
+                    }
+                    else if (iznos == 0)
+                    {
+                        provizija = 0;
+                        break;
                     }
                 }
                 din_racun -= (iznos + provizija);
